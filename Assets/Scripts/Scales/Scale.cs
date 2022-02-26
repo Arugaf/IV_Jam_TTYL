@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Happiness : MonoBehaviour {
-    private const uint Capacity = 100;
-    [Range(0, 100)] public uint amount;
+public class Scale : MonoBehaviour {
+    protected uint Capacity;
+    public uint amount;
 
-    public void SetAmount(uint amt = Capacity) {
+    public void SetAmount(uint amt) {
         amount = amt;
     }
 
@@ -18,7 +18,7 @@ public class Happiness : MonoBehaviour {
         amount = amount - amt > 0 ? amount - amt : 0;
     }
 
-    public void Start() {
-        SetAmount();
+    public bool IsEnough(uint amt) {
+        return (int)amount - (int)amt > 0;
     }
 }
