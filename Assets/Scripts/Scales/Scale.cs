@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Scale : MonoBehaviour {
@@ -8,6 +9,10 @@ public class Scale : MonoBehaviour {
 
     public void SetAmount(uint amt) {
         amount = amt;
+    }
+
+    public void SetMax() {
+        amount = Capacity;
     }
 
     public void Increase(uint amt) {
